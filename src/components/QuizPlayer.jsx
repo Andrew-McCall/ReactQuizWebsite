@@ -9,9 +9,13 @@ export default () => {
     const QuizData = useContext(QuizContext)[quiz];
     const currentQuestion = QuizData.questions[questionNo]
 
-    const ainput = (e) =>{
+    const ainput = (e) => {
         currentQuestion.G = e.target.value
         e.preventDefault()
+    }
+
+    const resetG = (e) => {
+        QuizData.questions.forEach(q => {q.G = ""})
     }
 
     if (question < QuizData.questions.length) {
@@ -40,7 +44,7 @@ export default () => {
             <h1>{QuizData.title}- Submited</h1>
             <h3>{QuizData.description}</h3>
             <h4>{correct}/{QuizData.questions.length} - {Math.round(correct/QuizData.questions.length*1000)/10}%</h4>
-            <Link to={`/`}><button>Home</button></Link>
+            <Link to={`/`}><button onClick={resetG}>Home</button></Link>
         </Fragment>)
     }
 
