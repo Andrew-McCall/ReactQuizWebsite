@@ -39,7 +39,7 @@ export default () => {
         <Fragment>
             <h1>{QuizData.title}- Submited</h1>
             <h3>{QuizData.description}</h3>
-            <h4>{correct}/{QuizData.questions.length}</h4>
+            <h4>{correct}/{QuizData.questions.length} - {Math.round(correct/QuizData.questions.length*1000)/10}%</h4>
         </Fragment>)
     }
 
