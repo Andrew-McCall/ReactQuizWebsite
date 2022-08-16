@@ -41,7 +41,7 @@ export default () => {
         });
         return ( 
         <Fragment>
-            <h1>{QuizData.title}- Submited</h1>
+            <h1>{QuizData.title} - Submited</h1>
             <h3>{QuizData.description}</h3>
             <h4>{correct}/{QuizData.questions.length} - {Math.round(correct/QuizData.questions.length*1000)/10}%</h4>
             <Link to={`/`}><button onClick={resetG}>Home</button></Link>
